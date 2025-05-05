@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Vinyl Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="player.css">
+</head>
+<body>
+    <header>
+        <h1 class="pixel-text">A41K's little Vinyl Shop</h1>
+        <nav>
+            <ul>
+                <li><button id="shop-btn" class="nav-btn active">Shop</button></li>
+                <li><button id="player-btn" class="nav-btn">Player</button></li>
+                <li><button id="settings-btn" class="nav-btn">Settings</button></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Shop Section -->
+        <section id="shop" class="section active">
+            <h2 class="pixel-text">Vinyl Collection</h2>
+            <div class="filter-controls">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="buy">Buy</button>
+                <button class="filter-btn" data-filter="rent">Rent</button>
+            </div>
+            <div class="vinyl-grid" id="vinyl-collection">
+                <!-- Vinyl records will be dynamically added here -->
+            </div>
+        </section>
+
+        <!-- Player Section -->
+        <section id="player" class="section">
+            <h2 class="pixel-text">Vinyl Player</h2>
+            <div class="player-container">
+                <div class="turntable">
+                    <div class="turntable-base"></div>
+                    <div class="platter">
+                        <div class="vinyl" id="current-vinyl">
+                            <div class="vinyl-label"></div>
+                            <div class="vinyl-grooves"></div>
+                        </div>
+                    </div>
+                    <div class="tonearm">
+                        <div class="tonearm-base"></div>
+                        <div class="tonearm-arm"></div>
+                        <div class="tonearm-head"></div>
+                    </div>
+                    <div class="controls">
+                        <button id="play-btn" class="control-btn">Play</button>
+                        <button id="stop-btn" class="control-btn">Stop</button>
+                    </div>
+                </div>
+                <div class="playlist">
+                    <h3 class="pixel-text">Your Collection</h3>
+                    <ul id="owned-vinyls">
+                        <!-- Owned vinyl records will be dynamically added here -->
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Settings Section -->
+        <section id="settings" class="section">
+            <h2 class="pixel-text">Settings</h2>
+            <div class="settings-container">
+                <div class="setting-group">
+                    <h3 class="pixel-text">Theme</h3>
+                    <div class="setting-controls">
+                        <button class="theme-btn active" data-theme="light">Light</button>
+                        <button class="theme-btn" data-theme="dark">Dark</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h3 class="pixel-text">Audio Quality</h3>
+                    <div class="setting-controls">
+                        <button class="quality-btn active" data-quality="standard">Standard</button>
+                        <button class="quality-btn" data-quality="high">High</button>
+                    </div>
+                </div>
+                <div class="setting-group">
+                    <h3 class="pixel-text">Volume</h3>
+                    <input type="range" id="volume-slider" min="0" max="100" value="80">
+                    <span id="volume-value">80%</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 A41K. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

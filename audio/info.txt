@@ -1,0 +1,2 @@
+This folder contains sample audio files for the Vinyl Shop player.
+These are placeholder audio clips for demonstration purposes only.
