@@ -161,6 +161,9 @@
     overflow: hidden;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
     border: 1px solid rgba(255, 255, 255, 0.2);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .vinyl-grooves {
@@ -282,6 +285,56 @@
     100% { transform: rotate(-45deg) translateY(0.3px); }
 }
 
+/* Dust Particles Effect */
+.turntable::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle at 10% 20%, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      radial-gradient(circle at 30% 60%, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      radial-gradient(circle at 55% 35%, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      radial-gradient(circle at 70% 80%, rgba(255,255,255,0.03) 1px, transparent 1px),
+                      radial-gradient(circle at 90% 40%, rgba(255,255,255,0.03) 1px, transparent 1px);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.turntable.playing::after {
+    opacity: 1;
+    animation: dust-float 10s infinite linear;
+}
+
+@keyframes dust-float {
+    0% { background-position: 0 0; }
+    100% { background-position: 10px 10px; }
+}
+
+/* Add a needle to the tonearm head */
+.tonearm-head::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 3px;
+    width: 1px;
+    height: 5px;
+    background-color: #ddd;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Add subtle animation when playing */
+.tonearm.playing .tonearm-head {
+    animation: needle-vibration 0.5s infinite alternate;
+}
+
+@keyframes needle-vibration {
+    0% { transform: rotate(-45deg) translateY(0); }
+    100% { transform: rotate(-45deg) translateY(0.3px); }
+}
+
 /* Controls */
 .controls {
     position: absolute;
@@ -311,6 +364,21 @@
     border-radius: 3px;
     position: relative;
     overflow: hidden;
+}
+
+.control-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: 0.5s;
+}
+
+.control-btn:hover::after {
+    left: 100%;
 }
 
 .control-btn::after {
@@ -381,6 +449,10 @@
     margin-right: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     transition: transform 0.3s ease;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    overflow: hidden;
 }
 
 .playlist-item:hover .playlist-cover {
@@ -430,11 +502,23 @@
 
 .track-list li {
     margin-bottom: 4px;
-    padding: 2px 0;
+    padding: 4px 6px;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all 0.2s ease;
 }
 
 .track-list li:hover {
     color: #8e44ad;
+    background-color: rgba(142, 68, 173, 0.1);
+    transform: translateX(2px);
+}
+
+.track-list li.active {
+    color: #fff;
+    background-color: #8e44ad;
+    font-weight: bold;
+    padding-left: 8px;
 }
 
 /* Dark Theme Adjustments */

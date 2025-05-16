@@ -9,10 +9,12 @@ const vinylData = [
         price: 29.99,
         type: "buy",
         cover: "linear-gradient(135deg, #3e4a61 0%, #000000 75%, #3e4a61 100%)",
+        coverImage: "images/dark-side.jpg", // Image path for album artwork
         labelColor: "#3e4a61",
         year: 1973,
         trackList: ["Speak to Me", "Breathe", "On the Run", "Time", "The Great Gig in the Sky", "Money", "Us and Them", "Any Colour You Like", "Brain Damage", "Eclipse"],
-        audioSrc: "audio/dark-side.mp3"
+        audioSrc: "audio/dark-side.mp3",
+        trackSrcs: ["audio/good kid.mp3", "audio/breathe.mp3", "audio/on-the-run.mp3", "audio/time.mp3", "audio/great-gig.mp3", "audio/money.mp3", "audio/us-and-them.mp3", "audio/any-colour.mp3", "audio/brain-damage.mp3", "audio/eclipse.mp3"]
     },
     {
         id: 2,
@@ -21,10 +23,12 @@ const vinylData = [
         price: 24.99,
         type: "buy",
         cover: "linear-gradient(45deg, #b82e1f 0%, #7a1c12 50%, #b82e1f 100%)",
+        coverImage: "images/thriller.jpg",
         labelColor: "#b82e1f",
         year: 1982,
         trackList: ["Wanna Be Startin' Somethin'", "Baby Be Mine", "The Girl Is Mine", "Thriller", "Beat It", "Billie Jean", "Human Nature", "P.Y.T. (Pretty Young Thing)", "The Lady in My Life"],
-        audioSrc: "audio/thriller.mp3"
+        audioSrc: "audio/thriller.mp3",
+        trackSrcs: ["audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3", "audio/thriller.mp3"]
     },
     {
         id: 3,
@@ -36,7 +40,9 @@ const vinylData = [
         labelColor: "#e6dfd9",
         year: 1977,
         trackList: ["Second Hand News", "Dreams", "Never Going Back Again", "Don't Stop", "Go Your Own Way", "Songbird", "The Chain", "You Make Loving Fun", "I Don't Want to Know", "Oh Daddy", "Gold Dust Woman"],
-        audioSrc: "audio/rumours.mp3"
+        audioSrc: "audio/rumours.mp3",
+        coverImage: "images/rumours.jpg",
+        trackSrcs: ["audio/rumours/second-hand-news.mp3", "audio/rumours/dreams.mp3", "audio/rumours/never-going-back.mp3", "audio/rumours/dont-stop.mp3", "audio/rumours/go-your-own-way.mp3", "audio/rumours/songbird.mp3", "audio/rumours/the-chain.mp3", "audio/rumours/you-make-loving-fun.mp3", "audio/rumours/i-dont-want-to-know.mp3", "audio/rumours/oh-daddy.mp3", "audio/rumours/gold-dust-woman.mp3"]
     },
     {
         id: 4,
@@ -48,7 +54,9 @@ const vinylData = [
         labelColor: "#4a76ab",
         year: 1969,
         trackList: ["Come Together", "Something", "Maxwell's Silver Hammer", "Oh! Darling", "Octopus's Garden", "I Want You (She's So Heavy)", "Here Comes the Sun", "Because", "You Never Give Me Your Money", "Sun King", "Mean Mr. Mustard", "Polythene Pam", "She Came in Through the Bathroom Window", "Golden Slumbers", "Carry That Weight", "The End", "Her Majesty"],
-        audioSrc: "audio/abbey-road.mp3"
+        audioSrc: "audio/abbey-road.mp3",
+        coverImage: "images/abbey-road.jpg",
+        trackSrcs: ["audio/abbey-road/come-together.mp3", "audio/abbey-road/something.mp3", "audio/abbey-road/maxwell.mp3", "audio/abbey-road/oh-darling.mp3", "audio/abbey-road/octopus.mp3", "audio/abbey-road/i-want-you.mp3", "audio/abbey-road/here-comes-the-sun.mp3", "audio/abbey-road/because.mp3", "audio/abbey-road/money.mp3", "audio/abbey-road/sun-king.mp3", "audio/abbey-road/mr-mustard.mp3", "audio/abbey-road/polythene.mp3", "audio/abbey-road/bathroom-window.mp3", "audio/abbey-road/golden-slumbers.mp3", "audio/abbey-road/carry-that-weight.mp3", "audio/abbey-road/the-end.mp3", "audio/abbey-road/her-majesty.mp3"]
     },
     {
         id: 5,
@@ -60,7 +68,9 @@ const vinylData = [
         labelColor: "#304878",
         year: 1959,
         trackList: ["So What", "Freddie Freeloader", "Blue in Green", "All Blues", "Flamenco Sketches"],
-        audioSrc: "audio/kind-of-blue.mp3"
+        audioSrc: "audio/kind-of-blue.mp3",
+        coverImage: "images/kind-of-blue.jpg",
+        trackSrcs: ["audio/kind-of-blue/so-what.mp3", "audio/kind-of-blue/freddie.mp3", "audio/kind-of-blue/blue-in-green.mp3", "audio/kind-of-blue/all-blues.mp3", "audio/kind-of-blue/flamenco.mp3"]
     },
     {
         id: 6,
@@ -72,7 +82,9 @@ const vinylData = [
         labelColor: "#000000",
         year: 1980,
         trackList: ["Hells Bells", "Shoot to Thrill", "What Do You Do for Money Honey", "Given the Dog a Bone", "Let Me Put My Love into You", "Back in Black", "You Shook Me All Night Long", "Have a Drink on Me", "Shake a Leg", "Rock and Roll Ain't Noise Pollution"],
-        audioSrc: "audio/back-in-black.mp3"
+        audioSrc: "audio/back-in-black.mp3",
+        coverImage: "images/back-in-black.jpg",
+        trackSrcs: ["audio/back-in-black/hells-bells.mp3", "audio/back-in-black/shoot-to-thrill.mp3", "audio/back-in-black/money-honey.mp3", "audio/back-in-black/dog-bone.mp3", "audio/back-in-black/love-into-you.mp3", "audio/back-in-black/back-in-black.mp3", "audio/back-in-black/shook-me.mp3", "audio/back-in-black/drink.mp3", "audio/back-in-black/shake-leg.mp3", "audio/back-in-black/rock-and-roll.mp3"]
     },
     {
         id: 7,
@@ -84,7 +96,9 @@ const vinylData = [
         labelColor: "#6f4685",
         year: 1984,
         trackList: ["Let's Go Crazy", "Take Me with U", "The Beautiful Ones", "Computer Blue", "Darling Nikki", "When Doves Cry", "I Would Die 4 U", "Baby I'm a Star", "Purple Rain"],
-        audioSrc: "audio/purple-rain.mp3"
+        audioSrc: "audio/purple-rain.mp3",
+        coverImage: "images/purple-rain.jpg",
+        trackSrcs: ["audio/purple-rain/lets-go-crazy.mp3", "audio/purple-rain/take-me.mp3", "audio/purple-rain/beautiful-ones.mp3", "audio/purple-rain/computer-blue.mp3", "audio/purple-rain/darling-nikki.mp3", "audio/purple-rain/when-doves-cry.mp3", "audio/purple-rain/die-4-u.mp3", "audio/purple-rain/baby-star.mp3", "audio/purple-rain/purple-rain.mp3"]
     },
     {
         id: 8,
@@ -96,7 +110,9 @@ const vinylData = [
         labelColor: "#5a9bd5",
         year: 1991,
         trackList: ["Smells Like Teen Spirit", "In Bloom", "Come as You Are", "Breed", "Lithium", "Polly", "Territorial Pissings", "Drain You", "Lounge Act", "Stay Away", "On a Plain", "Something in the Way", "Endless, Nameless"],
-        audioSrc: "audio/nevermind.mp3"
+        audioSrc: "audio/nevermind.mp3",
+        coverImage: "images/nevermind.jpg",
+        trackSrcs: ["audio/nevermind/teen-spirit.mp3", "audio/nevermind/in-bloom.mp3", "audio/nevermind/come-as-you-are.mp3", "audio/nevermind/breed.mp3", "audio/nevermind/lithium.mp3", "audio/nevermind/polly.mp3", "audio/nevermind/territorial.mp3", "audio/nevermind/drain-you.mp3", "audio/nevermind/lounge-act.mp3", "audio/nevermind/stay-away.mp3", "audio/nevermind/on-a-plain.mp3", "audio/nevermind/something.mp3", "audio/nevermind/endless.mp3"]
     },
     {
         id: 9,
@@ -108,7 +124,9 @@ const vinylData = [
         labelColor: "#2e8b57",
         year: 1992,
         trackList: ["The Chronic (Intro)", "Nuthin' But a 'G' Thang", "Let Me Ride", "The Day the Niggaz Took Over", "Nuthin' but a 'G' Thang", "Deeez Nuuuts", "Lil' Ghetto Boy", "A Nigga Witta Gun", "Rat-Tat-Tat-Tat", "The $20 Sack Pyramid", "Lyrical Gangbang", "High Powered", "The Doctor's Office", "Stranded on Death Row", "The Roach (The Chronic Outro)", "Bitches Ain't Shit"],
-        audioSrc: "audio/the-chronic.mp3"
+        audioSrc: "audio/the-chronic.mp3",
+        coverImage: "images/the-chronic.jpg",
+        trackSrcs: ["audio/chronic/intro.mp3", "audio/chronic/g-thang.mp3", "audio/chronic/let-me-ride.mp3", "audio/chronic/took-over.mp3", "audio/chronic/g-thang-2.mp3", "audio/chronic/deeez-nuuuts.mp3", "audio/chronic/ghetto-boy.mp3", "audio/chronic/witta-gun.mp3", "audio/chronic/rat-tat.mp3", "audio/chronic/sack-pyramid.mp3", "audio/chronic/gangbang.mp3", "audio/chronic/high-powered.mp3", "audio/chronic/doctors-office.mp3", "audio/chronic/death-row.mp3", "audio/chronic/roach.mp3", "audio/chronic/aint-shit.mp3"]
     },
     {
         id: 10,
@@ -120,7 +138,9 @@ const vinylData = [
         labelColor: "#4c4c4c",
         year: 1997,
         trackList: ["Airbag", "Paranoid Android", "Subterranean Homesick Alien", "Exit Music (For a Film)", "Let Down", "Karma Police", "Fitter Happier", "Electioneering", "Climbing Up the Walls", "No Surprises", "Lucky", "The Tourist"],
-        audioSrc: "audio/ok-computer.mp3"
+        audioSrc: "audio/ok-computer.mp3",
+        coverImage: "images/ok-computer.jpg",
+        trackSrcs: ["audio/ok-computer/airbag.mp3", "audio/ok-computer/paranoid.mp3", "audio/ok-computer/alien.mp3", "audio/ok-computer/exit-music.mp3", "audio/ok-computer/let-down.mp3", "audio/ok-computer/karma-police.mp3", "audio/ok-computer/fitter.mp3", "audio/ok-computer/electioneering.mp3", "audio/ok-computer/climbing.mp3", "audio/ok-computer/no-surprises.mp3", "audio/ok-computer/lucky.mp3", "audio/ok-computer/tourist.mp3"]
     },
     {
         id: 11,
@@ -132,7 +152,9 @@ const vinylData = [
         labelColor: "#f5f5dc",
         year: 2016,
         trackList: ["Nikes", "Ivy", "Pink + White", "Be Yourself", "Solo", "Skyline To", "Self Control", "Good Guy", "Nights", "Solo (Reprise)", "Pretty Sweet", "Facebook Story", "Close to You", "White Ferrari", "Seigfried", "Godspeed", "Futura Free"],
-        audioSrc: "audio/blonde.mp3"
+        audioSrc: "audio/blonde.mp3",
+        coverImage: "images/blonde.jpg",
+        trackSrcs: ["audio/blonde/nikes.mp3", "audio/blonde/ivy.mp3", "audio/blonde/pink-white.mp3", "audio/blonde/be-yourself.mp3", "audio/blonde/solo.mp3", "audio/blonde/skyline.mp3", "audio/blonde/self-control.mp3", "audio/blonde/good-guy.mp3", "audio/blonde/nights.mp3", "audio/blonde/solo-reprise.mp3", "audio/blonde/pretty-sweet.mp3", "audio/blonde/facebook.mp3", "audio/blonde/close-to-you.mp3", "audio/blonde/white-ferrari.mp3", "audio/blonde/seigfried.mp3", "audio/blonde/godspeed.mp3", "audio/blonde/futura-free.mp3"]
     },
     {
         id: 12,
@@ -141,10 +163,29 @@ const vinylData = [
         price: 29.99,
         type: "buy",
         cover: "linear-gradient(to bottom, #000000 0%, #333333 50%, #000000 100%)",
+        coverImage: "images/TPAB.png",
         labelColor: "#333333",
         year: 2015,
         trackList: ["Wesley's Theory", "For Free? (Interlude)", "King Kunta", "Institutionalized", "These Walls", "u", "Alright", "For Sale? (Interlude)", "Momma", "Hood Politics", "How Much a Dollar Cost", "Complexion (A Zulu Love)", "The Blacker the Berry", "You Ain't Gotta Lie (Momma Said)", "i", "Mortal Man"],
-        audioSrc: "audio/good kid.mp3"
+        audioSrc: "audio/good kid.mp3",
+        trackSrcs: [
+            "audio/#12/Wesley's Theory.mp3",
+            "audio/#12/For Free (Interlude).mp3",
+            "audio/#12/King Kunta.mp3",
+            "audio/#12/Institutionalized.mp3",
+            "audio/#12/These Walls.mp3",
+            "audio/#12/u.mp3",
+            "audio/#12/Alright.mp3",
+            "audio/#12/For Sale (Interlude).mp3",
+            "audio/#12/Momma.mp3",
+            "audio/#12/Hood Politics.mp3",
+            "audio/#12/How Much A Dollar Cost.mp3",
+            "audio/#12/Complexion (A Zulu Love).mp3",
+            "audio/#12/The Blacker The Berry.mp3",
+            "audio/#12/You Ain't Gotta Lie (Momma Said).mp3",
+            "audio/#12/i.mp3",
+            "audio/#12/Mortal Man.mp3"
+          ]          
     }
 ];
 
@@ -183,8 +224,7 @@ function init() {
     
     // Add some initial vinyls to user collection for demo purposes
     addToCollection(1); // Dark Side of the Moon
-    addToCollection(4); // Abbey Road
-    addToCollection(8); // Nevermind
+    addToCollection(12); // To Pimp a Butterfly
     
     // Update the player playlist
     updatePlaylist();
@@ -194,8 +234,25 @@ function init() {
     
     // Set up audio event listeners
     audioPlayer.addEventListener('ended', () => {
-        // When track ends, add a small delay and then stop playback
-        setTimeout(stopPlayback, 1000);
+        // When track ends, check if there's a next track to play
+        if (currentVinyl.dataset.vinylId && currentVinyl.dataset.currentTrack) {
+            const vinylId = parseInt(currentVinyl.dataset.vinylId);
+            const currentTrackIndex = parseInt(currentVinyl.dataset.currentTrack);
+            const vinyl = vinylData.find(v => v.id === vinylId);
+            
+            // If there's a next track available, play it
+            if (vinyl && vinyl.trackList && currentTrackIndex < vinyl.trackList.length - 1) {
+                const nextTrackIndex = currentTrackIndex + 1;
+                loadVinyl(vinyl, nextTrackIndex);
+                startPlayback();
+            } else {
+                // If this was the last track, stop playback after a small delay
+                setTimeout(stopPlayback, 1000);
+            }
+        } else {
+            // If no track information is available, just stop playback
+            setTimeout(stopPlayback, 1000);
+        }
     });
 }
 
@@ -207,8 +264,14 @@ function displayVinyls(filter = 'all') {
         if (filter === 'all' || vinyl.type === filter) {
             const vinylElement = document.createElement('div');
             vinylElement.className = 'vinyl-item';
+            
+            // Use cover image if available, otherwise use gradient
+            const coverStyle = vinyl.coverImage ? 
+                `background-image: url('${vinyl.coverImage}'); background-size: cover;` : 
+                `background-image: ${vinyl.cover};`;
+                
             vinylElement.innerHTML = `
-                <div class="vinyl-cover" style="background-image: ${vinyl.cover};"></div>
+                <div class="vinyl-cover" style="${coverStyle}"></div>
                 <div class="vinyl-title">${vinyl.title}</div>
                 <div class="vinyl-artist">${vinyl.artist} (${vinyl.year})</div>
                 <div class="vinyl-price">$${vinyl.price.toFixed(2)}</div>
@@ -273,8 +336,14 @@ function updatePlaylist() {
             const playlistItem = document.createElement('li');
             playlistItem.className = 'playlist-item';
             playlistItem.dataset.id = vinyl.id;
+            
+            // Use cover image if available, otherwise use gradient
+            const coverStyle = vinyl.coverImage ? 
+                `background-image: url('${vinyl.coverImage}'); background-size: cover;` : 
+                `background: ${vinyl.cover};`;
+                
             playlistItem.innerHTML = `
-                <div class="playlist-cover" style="background-color: ${vinyl.cover};"></div>
+                <div class="playlist-cover" style="${coverStyle}"></div>
                 <div class="playlist-info">
                     <div class="playlist-title">${vinyl.title}</div>
                     <div class="playlist-artist">${vinyl.artist}</div>
@@ -304,33 +373,73 @@ function updatePlaylist() {
 }
 
 // Load a vinyl into the player
-function loadVinyl(vinyl) {
+function loadVinyl(vinyl, trackIndex = 0) {
     // Update the vinyl appearance
     currentVinyl.style.backgroundColor = '#111';
-    currentVinyl.querySelector('.vinyl-label').style.backgroundColor = vinyl.labelColor;
-    currentVinyl.querySelector('.vinyl-label').innerHTML = `
-        <div style="font-size: 8px; line-height: 1.2;">
-            ${vinyl.title}<br>
-            ${vinyl.artist}<br>
-            <small>${vinyl.year}</small>
-        </div>
-    `;
+    
+    // Use cover image if available for the vinyl label
+    if (vinyl.coverImage) {
+        currentVinyl.querySelector('.vinyl-label').style.backgroundImage = `url('${vinyl.coverImage}')`;
+        currentVinyl.querySelector('.vinyl-label').style.backgroundSize = 'cover';
+        currentVinyl.querySelector('.vinyl-label').innerHTML = '';
+    } else {
+        currentVinyl.querySelector('.vinyl-label').style.backgroundImage = 'none';
+        currentVinyl.querySelector('.vinyl-label').style.backgroundColor = vinyl.labelColor;
+        currentVinyl.querySelector('.vinyl-label').innerHTML = `
+            <div style="font-size: 8px; line-height: 1.2;">
+                ${vinyl.title}<br>
+                ${vinyl.artist}<br>
+                <small>${vinyl.year}</small>
+            </div>
+        `;
+    }
     
     // Stop playback if it's currently playing
     stopPlayback();
     
-    // Set the audio source
-    audioPlayer.src = vinyl.audioSrc !== '#' ? vinyl.audioSrc : 'audio/default-track.mp3';
-    audioPlayer.load();
+    // Set the audio source based on track index if available
+    // Set up error handling for audio source
+    try {
+        if (vinyl.trackSrcs && vinyl.trackSrcs.length > trackIndex) {
+            audioPlayer.src = vinyl.trackSrcs[trackIndex];
+        } else if (vinyl.audioSrc && vinyl.audioSrc !== '#') {
+            audioPlayer.src = vinyl.audioSrc;
+        } else {
+            audioPlayer.src = 'audio/default-track.mp3';
+        }
+        
+        // Add error handling for audio loading
+        audioPlayer.onerror = function() {
+            console.log('Error loading audio source, falling back to default track');
+            audioPlayer.src = 'audio/default-track.mp3';
+        };
+        
+        audioPlayer.load();
+    } catch (error) {
+        console.error('Error setting audio source:', error);
+        audioPlayer.src = 'audio/default-track.mp3';
+        audioPlayer.load();
+    }
+    
+    // Store the current vinyl and track index as global variables
+    currentVinyl.dataset.vinylId = vinyl.id;
+    currentVinyl.dataset.currentTrack = trackIndex;
     
     // Display track list if available
     if (vinyl.trackList && vinyl.trackList.length > 0) {
         const trackListContainer = document.createElement('div');
         trackListContainer.className = 'track-list-container';
+        
+        // Create track list with clickable items
+        const trackListHTML = vinyl.trackList.map((track, index) => {
+            const isActive = index === trackIndex ? 'class="active"' : '';
+            return `<li data-track-index="${index}" ${isActive}>${track}</li>`;
+        }).join('');
+        
         trackListContainer.innerHTML = `
             <h4>Track List:</h4>
             <ol class="track-list">
-                ${vinyl.trackList.map(track => `<li>${track}</li>`).join('')}
+                ${trackListHTML}
             </ol>
         `;
         
@@ -342,6 +451,20 @@ function loadVinyl(vinyl) {
         
         // Add the track list to the player section
         document.querySelector('.playlist').appendChild(trackListContainer);
+        
+        // Add click event listeners to track items
+        const trackItems = trackListContainer.querySelectorAll('.track-list li');
+        trackItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const clickedTrackIndex = parseInt(item.dataset.trackIndex);
+                // Update active track styling
+                trackItems.forEach(track => track.classList.remove('active'));
+                item.classList.add('active');
+                // Load and play the selected track
+                loadVinyl(vinyl, clickedTrackIndex);
+                startPlayback();
+            });
+        });
     }
 }
 
@@ -371,6 +494,18 @@ function startPlayback() {
     
     // Visual feedback
     currentVinyl.classList.add('playing');
+    
+    // Highlight the currently playing track in the track list if available
+    if (currentVinyl.dataset.currentTrack) {
+        const trackIndex = parseInt(currentVinyl.dataset.currentTrack);
+        const trackItems = document.querySelectorAll('.track-list li');
+        if (trackItems.length > 0) {
+            trackItems.forEach(item => item.classList.remove('active'));
+            if (trackItems[trackIndex]) {
+                trackItems[trackIndex].classList.add('active');
+            }
+        }
+    }
 }
 
 // Stop playback
