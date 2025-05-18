@@ -116,31 +116,57 @@ const vinylData = [
     },
     {
         id: 9,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "IGOR",
+        artist: "Tyler, The Creator",
+        price: 19.99,
         type: "buy",
         cover: "linear-gradient(45deg, #2e8b57 0%, #1a5733 50%, #2e8b57 100%)",
         labelColor: "#2e8b57",
-        year: 9,
-        trackList: [],
-        audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
+        year: 2019,
+        trackList: ["IGOR'S THEME", "EARFQUAKE", "I THINK", "EXACTLY WHAT YOU RUN FROM YOU END UP CHASING", "RUNNING OUT OF TIME", "NEW MAGIC WAND", "A BOY IS A GUN", "PUPPET", "WHAT'S GOOD", "GONE, GONE / THANK YOU", "I DON'T LOVE YOU ANYMORE", "ARE WE STILL FRIENDS" ],
+        audioSrc: "audio/igor.mp3",
+        coverImage: "images/Igor.jpg",
+        trackSrcs: [
+            "audio/album9/IGOR'S THEME.mp3",
+            "audio/album9/EARFQUAKE.mp3",
+            "audio/album9/I THINK.mp3",
+            "audio/album9/EXACTLY WHAT YOU RUN FROM YOU END UP CHASING.mp3",
+            "audio/album9/RUNNING OUT OF TIME.mp3",
+            "audio/album9/NEW MAGIC WAND.mp3",
+            "audio/album9/A BOY IS A GUN.mp3",
+            "audio/album9/PUPPET.mp3",
+            "audio/album9/WHAT'S GOOD.mp3",
+            "audio/album9/GONE, GONE + THANK YOU.mp3",
+            "audio/album9/I DON'T LOVE YOU ANYMORE.mp3",
+            "audio/album9/ARE WE STILL FRIENDS.mp3"
+        ]
     },
     {
         id: 10,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "Sonder Son",
+        artist: "Brent Faiyaz",
+        price: 29.99,
         type: "buy",
         cover: "linear-gradient(to right, #4c4c4c 0%, #2d2d2d 50%, #4c4c4c 100%)",
         labelColor: "#4c4c4c",
-        year: 10,
-        trackList: [],
-        audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
+        year: 2017,
+        trackList: ["Home", "Gang Over Luv", "Burn One (Interlude)","First World Problemz/Nobody Carez", "Missin Out", "Stay Down", "L.A.", "Talk 2 U", "Sonder Son (Interlude)", "So Far Gone/Fast Life Bluez", "Needed", "All I Want" ],
+        audioSrc: "audio/SonderSon.mp3",
+        coverImage: "images/SonderSon.jpg",
+        trackSrcs: [
+            "audio/album10/Home.mp3",
+            "audio/album10/Gang Over Luv.mp3",
+            "audio/album10/Burn One (Interlude).mp3",
+            "audio/album10/First Worl Problemz + Nobody Carez.mp3",
+            "audio/album10/Missin Out.mp3",
+            "audio/album10/Stay Down.mp3",
+            "audio/album10/L.A..mp3",
+            "audio/album10/Talk 2 U.mp3",
+            "audio/album10/Sonder Son (Interlude).mp3",
+            "audio/album10/So Far Gone + Fast Life Bluez.mp3",
+            "audio/album10/Needed.mp3",
+            "audio/album10/All I Want.mp3"
+        ]
     },
     {
         id: 11,
@@ -185,7 +211,7 @@ const vinylData = [
         labelColor: "#333333",
         year: 2015,
         trackList: ["Wesley's Theory", "For Free? (Interlude)", "King Kunta", "Institutionalized", "These Walls", "u", "Alright", "For Sale? (Interlude)", "Momma", "Hood Politics", "How Much a Dollar Cost", "Complexion (A Zulu Love)", "The Blacker the Berry", "You Ain't Gotta Lie (Momma Said)", "i", "Mortal Man"],
-        audioSrc: "",
+        audioSrc: "audio/TPAB.mp3",
         trackSrcs: [
             "audio/album12/Wesley's Theory.mp3",
             "audio/album12/For Free (Interlude).mp3",
@@ -245,13 +271,31 @@ function init() {
     if (storedCollection) {
         userCollection = JSON.parse(storedCollection);
     }
+
+    // Load audio settings from local storage
+    const storedVolume = localStorage.getItem('volume');
+    const storedQuality = localStorage.getItem('audioQuality');
+
+    // Set volume
+    if (storedVolume) {
+        volumeSlider.value = storedVolume;
+        volumeValue.textContent = `${storedVolume}%`;
+        audioPlayer.volume = 0.8 * (storedVolume / 100);
+        crackleSound.volume = 0.2 * (storedVolume / 100);
+    }
+
+    // Set audio quality
+    if (storedQuality) {
+        qualityBtns.forEach(btn => {
+            btn.classList.toggle('active', btn.dataset.quality === storedQuality);
+        });
+    }
+
     // Populate the shop with vinyl records
     displayVinyls();
     
     // Set up event listeners
     setupEventListeners();
-    
-    // Add some initial vinyls to user collection for demo purposes
     
     // Update the player playlist
     updatePlaylist();
@@ -365,6 +409,18 @@ function addToCollection(vinylId) {
     }
 }
 
+// Remove a vinyl from the user's collection
+function removeFromCollection(vinylId) {
+    const index = userCollection.indexOf(vinylId);
+    if (index > -1) {
+        userCollection.splice(index, 1);
+        // Save updated collection to local storage
+        localStorage.setItem('userCollection', JSON.stringify(userCollection));
+        updatePlaylist();
+        displayVinyls(getActiveFilter()); // Re-render shop to update button states
+    }
+}
+
 // Update the player playlist
 function updatePlaylist() {
     ownedVinyls.innerHTML = '';
@@ -387,16 +443,24 @@ function updatePlaylist() {
                     <div class="playlist-title">${vinyl.title}</div>
                     <div class="playlist-artist">${vinyl.artist}</div>
                 </div>
+                <button class="remove-btn" data-id="${vinyl.id}">Remove</button>
             `;
             ownedVinyls.appendChild(playlistItem);
             
             // Add click event to load the vinyl into the player
-            playlistItem.addEventListener('click', () => {
+            playlistItem.querySelector('.playlist-cover, .playlist-info').addEventListener('click', () => {
                 loadVinyl(vinyl);
                 document.querySelectorAll('.playlist-item').forEach(item => {
                     item.classList.remove('active');
                 });
                 playlistItem.classList.add('active');
+            });
+
+            // Add click event to remove the vinyl from the collection
+            const removeBtn = playlistItem.querySelector('.remove-btn');
+            removeBtn.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent playlist item click event from firing
+                removeFromCollection(vinyl.id);
             });
         }
     });
@@ -604,7 +668,27 @@ function setupEventListeners() {
         btn.addEventListener('click', () => {
             qualityBtns.forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
-            // In a real app, this would adjust audio quality
+            const quality = btn.dataset.quality;
+            localStorage.setItem('audioQuality', quality);
+            
+            // Adjust audio quality by setting bitrate
+            if (quality === 'high') {
+                audioPlayer.mozPreservesPitch = true; // Better quality pitch preservation
+                if (audioPlayer.src) {
+                    const currentTime = audioPlayer.currentTime;
+                    audioPlayer.load(); // Reload with new quality settings
+                    audioPlayer.currentTime = currentTime;
+                    if (!audioPlayer.paused) audioPlayer.play();
+                }
+            } else {
+                audioPlayer.mozPreservesPitch = false;
+                if (audioPlayer.src) {
+                    const currentTime = audioPlayer.currentTime;
+                    audioPlayer.load(); // Reload with new quality settings
+                    audioPlayer.currentTime = currentTime;
+                    if (!audioPlayer.paused) audioPlayer.play();
+                }
+            }
         });
     });
     
@@ -616,6 +700,9 @@ function setupEventListeners() {
         // Adjust audio volume
         audioPlayer.volume = 0.8 * (value / 100);
         crackleSound.volume = 0.2 * (value / 100);
+        
+        // Save volume setting to local storage
+        localStorage.setItem('volume', value);
     });
 }
 

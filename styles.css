@@ -321,6 +321,24 @@ body.dark-theme footer {
     }
 }
 
+/* Remove Button Styles */
+.remove-btn {
+    background-color: #e74c3c; /* Red color for remove/delete actions */
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Courier New', monospace;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-left: 10px; /* Add some space if it's next to other buttons */
+}
+
+.remove-btn:hover {
+    background-color: #c0392b; /* Darker red on hover */
+}
+
 @media (max-width: 480px) {
     body {
         padding: 10px;

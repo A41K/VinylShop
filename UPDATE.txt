@@ -1,0 +1,33 @@
+-- UPDATES FROM GITHUB https://github.com/A41K/VinylShop/commits/main/ --
+
+Commited on May 16, 2025:
+v0.5 OUT OF BETA 
+- Added more albums
+- Added static mp3 files to play
+- Added better player styles
+- Added "#" for the different albums
+- Added animations for the albums
+- Added more options to the site
+- Added 1 cover for testing
+- Added default-track
+- Fixed 12 bugs
+- Added track continuation
+- Added audio slider
+- Added better light/dark mode options
+- Made the website better for phone users
+- Made the website load quicker
+
+Commited on May 18, 2025:
+v1.0 Release Edition Deluxe Skit (Interlude) (Extended)))
+- The music playback is finally fixed and working
+- Renamed the folder names
+- Removed default-track and demo.png
+- Added Blonde (album11)
+- Added more album images
+- Made it so you cant buy the same album twice
+- Added saving themes and albums to localstorage
+- Fixed album cover names
+- Made the default theme Dark
+- Removed Unused/Demo Albums (Will add more soon}
+- Remade the gradient for albums
+- Made unused albums not work

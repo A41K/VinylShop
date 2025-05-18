@@ -532,12 +532,16 @@ body.dark-theme .playlist {
     border-color: #8e44ad;
 }
 
+body.dark-theme .playlist-title {
+    color: #8e44ad;
+}
+
 body.dark-theme .playlist-item {
     border-color: #555;
 }
 
 body.dark-theme .playlist-artist {
-    color: #aaa;
+    color: #111;
 }
 
 body.dark-theme .control-btn {
