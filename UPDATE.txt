@@ -1,6 +1,7 @@
 -- UPDATES FROM GITHUB https://github.com/A41K/VinylShop/commits/main/ --
 
 Commited on May 16, 2025:
+
 v0.5 OUT OF BETA 
 - Added more albums
 - Added static mp3 files to play
@@ -18,6 +19,7 @@ v0.5 OUT OF BETA
 - Made the website load quicker
 
 Commited on May 18, 2025:
+
 v1.0 Release Edition Deluxe Skit (Interlude) (Extended)))
 - The music playback is finally fixed and working
 - Renamed the folder names
@@ -31,3 +33,21 @@ v1.0 Release Edition Deluxe Skit (Interlude) (Extended)))
 - Removed Unused/Demo Albums (Will add more soon}
 - Remade the gradient for albums
 - Made unused albums not work
+
+v1.1 After Release Release Remix/Not Remix
+- Removed Beta/Alpha leftovers
+- Added Sonder Son (Brent Faiyaz)
+- Added IGOR (Tyler, The Creator)
+- Fixed audioSrc
+- Removed Unused/Unneeded comments
+- Added UPDATE.txt for easier Update access from github
+- Added Standard/High quality music for real
+- Added saving to volume changes
+- Remade Dark mode playlist styles
+- Cleaned up the code a little bit
+- Added vinyl-crackle.mp3 for effects
+- Fixed bugs and Release errors
+- Made loading better
+- Added Remove button to albums
+- Added RemoveFromCollection command
+- Added Remove button Styles

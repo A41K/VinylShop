@@ -102,17 +102,42 @@ const vinylData = [
     },
     {
         id: 8,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "DONDA 2",
+        artist: "KanYe West",
+        price: 29.99,
         type: "buy",
         cover: "linear-gradient(to bottom, #5a9bd5 0%, #3a6b9d 50%, #5a9bd5 100%)",
         labelColor: "#5a9bd5",
-        year: 8,
-        trackList: [],
-        audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
+        year: 2022,
+        trackList: ["True Love", "Broken Road", "Get Lost", "Too Easy", "Flowers", "Security", "We Did It Kid", "Pablo", "Louie Bags", "Happy", "Sci Fi", "Selfish", "Lord Lift Me Up", "The City Of Gods", "First Time In A Long Time", "Ez", "MrMiyagi", "530", "Maintance", "Suzy", "Suzy (Mike Dean vers.)", "Jesse", "For The Children", "Get Lost"],
+        audioSrc: "audio/DONDA2.mp3",
+        coverImage: "images/DONDA2.jpg",
+        trackSrcs: [
+            "audio/album8/True Love (feat. XXXTENTACION).mp3",
+            "audio/album8/Broken Road (feat. Don Toliver).wav",
+            "audio/album8/Get Lost.mp3",
+            "audio/album8/Too Easy.mp3",
+            "audio/album8/Flowers.mp3",
+            "audio/album8/Security.mp3",
+            "audio/album8/We Did It Kid (feat. Migos & Baby Keem).mp3",
+            "audio/album8/Pablo (feat. Future & Travis Scott).mp3",
+            "audio/album8/Louie Bags (feat. Jack Harlow).mp3",
+            "audio/album8/Happy (feat. Future).mp3",
+            "audio/album8/Sci Fi (feat. Sean Leon).mp3",
+            "audio/album8/Selfish (feat. XXXTENTACION).mp3",
+            "audio/album8/Lord Lift Me Up (feat. Vory & Sunday Service Choir).mp3",
+            "audio/album8/The City Of Gods (feat. Alicia Keys & Fivio Foreign).mp3",
+            "audio/album8/First Time In a Long Time (feat. Soulja Boy).mp3",
+            "audio/album8/Ez (feat. The Game).mp3",
+            "audio/album8/(BONUS) Mr Miyagi (feat. Future & Playboi Carti).mp3",
+            "audio/album8/(BONUS) 530.mp3",
+            "audio/album8/(BONUS) Maintenance (feat. Future).mp3",
+            "audio/album8/(BONUS) Suzy (ref. Fat Money).mp3",
+            "audio/album8/(BONUS) Suzy (MIKE DEAN VERSION) (ref. Fat Money).m4a",
+            "audio/album8/(BONUS) Jesse.mp3",
+            "audio/album8/(BONUS) For The Children.mp3",
+            "audio/album8/(BONUS) Get Lost (MIKE DEAN Version).mp3"
+        ]
     },
     {
         id: 9,
@@ -294,7 +319,31 @@ function init() {
     // Populate the shop with vinyl records
     displayVinyls();
     
-    // Set up event listeners
+    // Function to update player outline based on settings
+
+// Turntable Theme Switching
+const turntableElement = document.querySelector('.turntable');
+const turntableThemeButtons = document.querySelectorAll('#turntable-theme-selector .theme-btn-turntable');
+
+turntableThemeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const theme = button.dataset.theme;
+        // Remove any existing turntable theme classes
+        turntableElement.classList.remove('turntable-theme-classic', 'turntable-theme-modern', 'turntable-theme-vintage');
+        // Add the new theme class
+        if (theme !== 'turntable-theme-classic') { // classic is the default, no specific class needed if it's the :root styles
+            turntableElement.classList.add(theme);
+        }
+        // Optional: Update active state for buttons if desired
+        turntableThemeButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    });
+});
+
+function updatePlayerOutline() {
+}
+
+// Set up event listeners
     setupEventListeners();
     
     // Update the player playlist
@@ -627,6 +676,30 @@ function stopPlayback() {
     
     // Remove visual effects
     currentVinyl.classList.remove('playing');
+}
+
+// Function to update player outline based on settings
+
+// Turntable Theme Switching
+const turntableElement = document.querySelector('.turntable');
+const turntableThemeButtons = document.querySelectorAll('#turntable-theme-selector .theme-btn-turntable');
+
+turntableThemeButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        const theme = button.dataset.theme;
+        // Remove any existing turntable theme classes
+        turntableElement.classList.remove('turntable-theme-classic', 'turntable-theme-modern', 'turntable-theme-vintage');
+        // Add the new theme class
+        if (theme !== 'turntable-theme-classic') { // classic is the default, no specific class needed if it's the :root styles
+            turntableElement.classList.add(theme);
+        }
+        // Optional: Update active state for buttons if desired
+        turntableThemeButtons.forEach(btn => btn.classList.remove('active'));
+        button.classList.add('active');
+    });
+});
+
+function updatePlayerOutline() {
 }
 
 // Set up event listeners
