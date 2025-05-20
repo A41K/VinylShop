@@ -60,45 +60,97 @@ const vinylData = [
     },
     {
         id: 5,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "ENDLESS",
+        artist: "Frank Ocean",
+        price: 100,
         type: "rent",
         cover: "linear-gradient(120deg, #304878 0%, #1a2940 50%, #304878 100%)",
         labelColor: "#304878",
-        year: 5,
-        trackList: [],
+        year: 2016,
+        trackList: ["Device Control", "At Your Best", "Alabama", "Mine", "U-N-I-T-Y", "In a Certain Way", "Comme des Garçons", "Xenons", "Honeybaby", "Wither", "Hublots", "In Here Somewhere", "Slide On Me", "Sideways", "Florida", "Deathwish", "Rushes", "Rushes To", "Higgs", "Mitsubishi Sony", "Device Control (Reprise)"],
         audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
+        coverImage: "images/Endless.jpg",
+        trackSrcs: [
+            "audio/album5/1-01 Device Control.mp3",
+            "audio/album5/1-02 At Your Best.mp3",
+            "audio/album5/1-03 Alabama.mp3",
+            "audio/album5/1-04 Mine.mp3",
+            "audio/album5/1-05 U-N-I-T-Y.mp3",
+            "audio/album5/1-06 In a Certain Way.mp3",
+            "audio/album5/1-07 Comme des Garcons.mp3",
+            "audio/album5/1-08 Xenons.mp3",
+            "audio/album5/1-09 Honeybaby.mp3",
+            "audio/album5/1-10 Wither.mp3",
+            "audio/album5/1-11 Hublots.mp3",
+            "audio/album5/1-12 In Here Somewhere.mp3",
+            "audio/album5/1-13 Slide On Me.mp3",
+            "audio/album5/1-14 Sideways.mp3",
+            "audio/album5/1-15 Florida.mp3",
+            "audio/album5/1-16 Deathwish.mp3",
+            "audio/album5/1-17 Rushes.mp3",
+            "audio/album5/1-18 Rushes To.mp3",
+            "audio/album5/1-19 Higgs.mp3",
+            "audio/album5/1-20 Mitsubishi Sony.mp3",
+            "audio/album5/1-21 Device Control (Reprise).mp3"
+        ]
     },
     {
         id: 6,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "Heaven Or Hell",
+        artist: "Don Toliver",
+        price: 24.99,
         type: "buy",
         cover: "linear-gradient(to right, #000000 0%, #333333 50%, #000000 100%)",
         labelColor: "#000000",
-        year: 6,
-        trackList: [],
+        year: 2020,
+        trackList: ["Heaven Or Hell", "Euphoria", "Cardigan", "After The Party", "Wasted", "Can't Feel My Legs", "Candy", "Company", "Had Enough", "Spaceship", "No Photos", "No Idea"],
         audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
+        coverImage: "images/HeavenOrHell.jpg",
+        trackSrcs: [
+            "audio/album6/Heaven or Hell.mp3",
+            "audio/album6/Euphoria (feat. Travis Scott & Kaash Paige).mp3",
+            "audio/album6/Cardigan.mp3",
+            "audio/album6/After Party.mp3",
+            "audio/album6/Wasted.mp3",
+            "audio/album6/Can't Feel My Legs.mp3",
+            "audio/album6/Candy.mp3",
+            "audio/album6/Company.mp3",
+            "audio/album6/Had Enough (feat. Quavo & Offset).mp3",
+            "audio/album6/Spaceship (feat. Sheck Wes).mp3",
+            "audio/album6/No Photos.mp3",
+            "audio/album6/No Idea.mp3"
+        ]
     },
     {
         id: 7,
-        title: "",
-        artist: "",
-        price: 0,
-        type: "rent",
+        title: "Rodeo",
+        artist: "Travis Scott",
+        price: 29.99,
+        type: "buy",
         cover: "linear-gradient(135deg, #6f4685 0%, #4a2e5c 50%, #6f4685 100%)",
         labelColor: "#6f4685",
-        year: 7,
-        trackList: [],
+        year: 2015,
+        trackList: ["Pornography", "Oh My Dis Side", "3500", "Wasted", "90210", "Pray 4 Love", "Nightcrawler", "Piss On Your Grave", "Antidote", "Impossible", "Maria I'm Drunk", "Flying High", "I Can Tell", "Apple Pie", "Ok Alright", "Never Catch Me"],
         audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
+        coverImage: "images/RODEO.jpg",
+        trackSrcs: [
+			"audio/album7/Pornography.mp3",
+			"audio/album7/Oh My Dis Side (feat. Quavo).mp3",
+			"audio/album7/3500 (feat. Future & 2 Chainz).mp3",
+			"audio/album7/Wasted (feat. Juicy J).mp3",
+			"audio/album7/90210 (feat. Kacy Hill).mp3",
+			"audio/album7/Pray 4 Love (feat. The Weeknd).mp3",
+			"audio/album7/Nightcrawler (feat. Swae Lee & Chief Keef).mp3",
+			"audio/album7/Piss On Your Grave (feat. Kanye West).mp3",
+			"audio/album7/Antidote.mp3",
+			"audio/album7/Impossible.mp3",
+			"audio/album7/Maria I'm Drunk (feat. Justin Bieber & Young Thug).mp3",
+			"audio/album7/Flying High (feat. Toro y Moi).mp3",
+			"audio/album7/I Can Tell.mp3",
+			"audio/album7/Apple Pie.mp3",
+			"audio/album7/Ok Alright (feat. ScHoolboy Q).mp3",
+			"audio/album7/Never Catch Me.mp3",
+		]
     },
     {
         id: 8,
@@ -278,9 +330,18 @@ const themeBtns = document.querySelectorAll('.theme-btn');
 const qualityBtns = document.querySelectorAll('.quality-btn');
 const volumeSlider = document.getElementById('volume-slider');
 const volumeValue = document.getElementById('volume-value');
+const currentTimeDisplay = document.getElementById('current-time');
+const totalDurationDisplay = document.getElementById('total-duration');
 
 // Audio elements
 const audioPlayer = new Audio();
+
+// Helper function to format time in MM:SS
+function formatTime(seconds) {
+    const minutes = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${minutes.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+}
 const crackleSound = new Audio('audio/vinyl-crackle.mp3'); // Vinyl crackle sound effect
 
 // Helper function to get the current active filter
@@ -353,6 +414,14 @@ function updatePlayerOutline() {
     crackleSound.load();
     
     // Set up audio event listeners
+    audioPlayer.addEventListener('loadedmetadata', () => {
+        totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
+    });
+
+    audioPlayer.addEventListener('timeupdate', () => {
+        currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+    });
+
     audioPlayer.addEventListener('ended', () => {
         // When track ends, check if there's a next track to play
         if (currentVinyl.dataset.vinylId && currentVinyl.dataset.currentTrack) {
@@ -548,6 +617,9 @@ function loadVinyl(vinyl, trackIndex = 0) {
     
     // Stop playback if it's currently playing
     stopPlayback();
+    // Reset time display
+    currentTimeDisplay.textContent = '00:00';
+    totalDurationDisplay.textContent = '00:00';
     
     // Set the audio source based on track index if available
     // Set up error handling for audio source
@@ -670,6 +742,14 @@ function stopPlayback() {
     
     // Stop all audio
     audioPlayer.pause();
+    // Reset time display when stopping manually
+    currentTimeDisplay.textContent = '00:00';
+    // Keep total duration if a track was loaded, otherwise reset
+    if (audioPlayer.src && audioPlayer.duration) {
+        totalDurationDisplay.textContent = formatTime(audioPlayer.duration);
+    } else {
+        totalDurationDisplay.textContent = '00:00';
+    }
     audioPlayer.currentTime = 0;
     crackleSound.pause();
     crackleSound.currentTime = 0;

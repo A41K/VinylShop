@@ -215,6 +215,7 @@
 
 /* Tonearm */
 .tonearm {
+    cursor: grab;
     position: absolute;
     top: 60px;
     right: 40px;
@@ -223,6 +224,10 @@
     transform-origin: bottom right;
     transition: transform 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 10;
+}
+
+.tonearm.dragging {
+    cursor: grabbing;
 }
 
 .tonearm::before {
@@ -633,6 +638,7 @@ body.dark-theme .control-btn {
     }
     
     .tonearm {
+    cursor: grab;
         top: 40px;
         right: 40px;
         width: 80px;
@@ -664,6 +670,7 @@ body.dark-theme .control-btn {
     }
     
     .tonearm {
+    cursor: grab;
         top: 35px;
         right: 35px;
         width: 70px;
