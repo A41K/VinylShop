@@ -497,6 +497,13 @@
     flex: 1;
 }
 
+.time-display {
+    margin: auto;
+    font-size: 0.8em;
+    color: #8E44AD;
+    font-weight: bold;
+}
+
 .playlist-title {
     font-weight: bold;
     margin-bottom: 3px;

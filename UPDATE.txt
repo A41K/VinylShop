@@ -68,3 +68,12 @@ v1.2 The Updatest of all of the updates ever released here yeahyeah
 - Added Copyright and comments
 - Added audioSrc
 - Removed again unneeded comments
+
+Commited on May 20, 2025,
+
+v1.25 A Smaller Update For Now
+- Added RODEO (Travis Scott)
+- Added Heaven Or Hell (Don Toliver)
+- Added Endless (Rent) (Frank Ocean)
+- Added a Favicon
+- Added v1.2 to the UPDATE.txt
