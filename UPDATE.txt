@@ -20,7 +20,7 @@ v0.5 OUT OF BETA
 
 Commited on May 18, 2025:
 
-v1.0 Release Edition Deluxe Skit (Interlude) (Extended)))
+v1.0 Release Edition Deluxe Skit (Interlude) (Extended)
 - The music playback is finally fixed and working
 - Renamed the folder names
 - Removed default-track and demo.png
@@ -30,7 +30,7 @@ v1.0 Release Edition Deluxe Skit (Interlude) (Extended)))
 - Added saving themes and albums to localstorage
 - Fixed album cover names
 - Made the default theme Dark
-- Removed Unused/Demo Albums (Will add more soon}
+- Removed Unused/Demo Albums (Will add more soon)
 - Remade the gradient for albums
 - Made unused albums not work
 
@@ -77,3 +77,8 @@ v1.25 A Smaller Update For Now
 - Added Endless (Rent) (Frank Ocean)
 - Added a Favicon
 - Added v1.2 to the UPDATE.txt
+
+v1.26 Remaining Added From The Smallest Update
+- Added Duration in the player
+- Added v1.25 to UPDATES.txt
+this is all...
