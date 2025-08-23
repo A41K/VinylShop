@@ -11,6 +11,33 @@
     border-radius: 10px;
 }  
 
+/* Progress Bar */
+.progress-bar-container {
+    width: 70%;
+    height: 8px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--primary-color);
+    border-radius: 4px;
+}
+
+.time-bar-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    font-size: 12.5px;
+    color: var(--primary-color);
+}
+
 @media (min-width: 768px) {
     .player-container {
         flex-direction: row;
@@ -20,6 +47,8 @@
 
 /* Turntable */
 :root {
+    --primary-color: #8e44ad;
+    --primary-color-rgb: 142, 68, 173;
     --turntable-bg-color: #8B4513; /* Wood-like color */
     --turntable-border-color: #5D3A1A;
     --turntable-gradient-color-1: #8B4513;
@@ -36,8 +65,8 @@
 
 .turntable {
     position: relative;
-    width: 350px;
-    height: 350px;
+    width: 425px;
+    height: 425px;
     background-color: var(--turntable-bg-color);
     border: 8px solid var(--turntable-border-color);
     border-radius: 10px;
@@ -64,8 +93,8 @@
     position: absolute;
     top: 60px;
     left: 60px;
-    width: 230px;
-    height: 230px;
+    width: 300px;
+    height: 300px;
     background-color: var(--platter-bg-color);
     border-radius: 50%;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3), inset 0 0 20px rgba(0, 0, 0, 0.5);
@@ -125,8 +154,8 @@
 /* Vinyl Record */
 .vinyl {
     position: relative;
-    width: 210px;
-    height: 210px;
+    width: 230px;
+    height: 230px;
     background-color: #111;
     border-radius: 50%;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -162,15 +191,15 @@
 }
 
 .vinyl-label {
-    width: 70px;
-    height: 70px;
+    width: 85px;
+    height: 85px;
     background-color: #ddd;
     border-radius: 50%;
     z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 10px;
+    font-size: 12px;
     text-align: center;
     color: #333;
     overflow: hidden;
@@ -195,10 +224,10 @@
 .vinyl-grooves::before {
     content: '';
     position: absolute;
-    top: 35px;
-    left: 35px;
-    right: 35px;
-    bottom: 35px;
+    top: 45px;
+    left: 45px;
+    right: 45px;
+    bottom: 45px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 50%;
     box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.05),
@@ -388,16 +417,19 @@
     background-color: #555;
     color: #fff;
     border: none;
+    font-size: small;
+    width: 85px;
+    justify-content: center;
     padding: 5px 15px;
     font-family: 'Courier New', monospace;
     cursor: pointer;
     transition: all 0.3s;
     text-transform: uppercase;
-    letter-spacing: 1px;
     border: 2px solid #777;
     border-radius: 3px;
     position: relative;
     overflow: hidden;
+    text-align: center;
 }
 
 .control-btn::after {
@@ -471,9 +503,9 @@
 }
 
 .playlist-item.active {
-    background-color: rgba(142, 68, 173, 0.2);
-    border-left: 4px solid #8e44ad;
-    box-shadow: 0 2px 8px rgba(142, 68, 173, 0.3);
+    background-color: rgba(var(--primary-color-rgb), 0.2);
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(var(--primary-color-rgb), 0.3);
 }
 
 .playlist-cover {
@@ -500,7 +532,7 @@
 .time-display {
     margin: auto;
     font-size: 0.8em;
-    color: #8E44AD;
+    color: var(--primary-color);
     font-weight: bold;
 }
 
@@ -551,7 +583,7 @@
 
 .track-list li:hover {
     color: #8e44ad;
-    background-color: rgba(142, 68, 173, 0.1);
+    background-color: rgba(var(--primary-color-rgb), 0.1);
     transform: translateX(2px);
 }
 
@@ -605,7 +637,7 @@ body.dark-theme .turntable {
 
 body.dark-theme .playlist {
     background-color: rgba(255, 255, 255, 0.05);
-    border-color: #8e44ad;
+    border-color: var(--primary-color);
 }
 
 body.dark-theme .playlist-title {

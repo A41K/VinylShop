@@ -4,59 +4,87 @@
 const vinylData = [
     {
         id: 1,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "Gemini Rights",
+        artist: "Steve Lacy",
+        price: 24.99,
         type: "buy",
         cover: "linear-gradient(135deg, #3e4a61 0%, #000000 75%, #3e4a61 100%)",
-        coverImage: "",
+        coverImage: "images/Gemini Rights.jpg",
         labelColor: "#3e4a61",
-        year: 1,
-        trackList: [],
+        year: 2022,
+        trackList: ["Static", "Helmet", "Mercury", "Buttons", "Bad Habit", "2Gether", "Cody Freestyle", "Amber", "Sunshine", "Give You The World",],
         audioSrc: "",
-        trackSrcs: []
+        trackSrcs: [
+            "audio/album1/Static.mp3",
+            "audio/album1/Helmet.mp3",
+            "audio/album1/Mercury.mp3",
+            "audio/album1/Buttons.mp3",
+            "audio/album1/Bad Habit.mp3",
+            "audio/album1/2Gether.mp3",
+            "audio/album1/Cody Freestyle.mp3",
+            "audio/album1/Amber.mp3",
+            "audio/album1/Sunshine (feat. Fousheé).mp3",
+            "audio/album1/Give You The World.mp3",
+        ]
     },
     {
         id: 2,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "Awaken, My Love!",
+        artist: "Childish Gambino",
+        price: 29.99,
         type: "buy",
         cover: "linear-gradient(45deg, #b82e1f 0%, #7a1c12 50%, #b82e1f 100%)",
-        coverImage: "",
+        coverImage: "images/Awaken, My Love.jpg",
         labelColor: "#b82e1f",
-        year: 2,
-        trackList: [],
+        year: 2016,
+        trackList: ["Me And Your Mama", "Have Some Love", "Boogieman", "Zombies", "Riot", "Redbone", "California", "Terrified", "Baby Boy", "The Night Me And Your Mama Met", "Stand Tall"],
         audioSrc: "",
-        trackSrcs: []
+        trackSrcs: [
+            "audio/album2/Me And Your Mama.mp3",
+            "audio/album2/Have Some Love.mp3",
+            "audio/album2/Boogieman.mp3",
+            "audio/album2/Zombies.mp3",
+            "audio/album2/Riot.mp3",
+            "audio/album2/Redbone.mp3",
+            "audio/album2/California.mp3",
+            "audio/album2/Terrified.mp3",
+            "audio/album2/Baby Boy.mp3",
+            "audio/album2/The Night Me And Your Mama Met.mp3",
+            "audio/album2/Stand Tall.mp3",
+        ]
     },
     {
         id: 3,
-        title: "",
-        artist: "",
-        price: 0,
+        title: "Lahai (Deluxe)",
+        artist: "Sampha",
+        price: 24.99,
         type: "buy",
         cover: "linear-gradient(to right, #e6dfd9 0%, #c9c0b9 50%, #e6dfd9 100%)",
         labelColor: "#e6dfd9",
-        year: 3,
-        trackList: [],
+        year: 2024,
+        trackList: ["Stereo Colour Cloud", "Spirit 2.0", "Dancing Circles", "Suspended", "Satellite Business", "Jonathan L. Seagull", "Inclination Compass", "Only", "Time Piece", "Can't Go Back", "Evidence", "Wave Therapy", "What If You Hypnotise Me?", "Rose Tint", "Satellite Business 2.0", "Dancing Circles 2.0", "Re-Entry", "Sensory Nectar"],
         audioSrc: "",
-        coverImage: "",
-        trackSrcs: []
-    },
-    {
-        id: 4,
-        title: "",
-        artist: "",
-        price: 0,
-        type: "rent",
-        cover: "linear-gradient(to bottom, #4a76ab 0%, #2c4566 75%, #4a76ab 100%)",
-        labelColor: "#4a76ab",
-        year: 4,
-        trackList: [],
-        audioSrc: "",
-        coverImage: "",
-        trackSrcs: [""]
+        coverImage: "images/Lahai.jpg",
+        trackSrcs: [
+            "audio/album3/Stereo Colour Cloud (Shaman's Dream).mp3",
+            "audio/album3/Spirit 2.0.mp3",
+            "audio/album3/Dancing Circles.mp3",
+            "audio/album3/Suspended.mp3",
+            "audio/album3/Satellite Business.mp3",
+            "audio/album3/Jonathan L. Seagull.mp3",
+            "audio/album3/Inclination Compass (Tenderness).mp3",
+            "audio/album3/Only.mp3",
+            "audio/album3/Time Piece.mp3",
+            "audio/album3/Can't Go Back.mp3",
+            "audio/album3/Evidence.mp3",
+            "audio/album3/Wave Therapy.mp3",
+            "audio/album3/What If You Hypnotise Me.mp3",
+            "audio/album3/Rose Tint.mp3",
+            "audio/album3/Satellite Business 2.0.mp3",
+            "audio/album3/Dancing Circles 2.0.mp3",
+            "audio/album3/Re-Entry.mp3",
+            "audio/album3/Sensory Nectar.mp3",
+        ]
     },
     {
         id: 5,
@@ -332,6 +360,8 @@ const volumeSlider = document.getElementById('volume-slider');
 const volumeValue = document.getElementById('volume-value');
 const currentTimeDisplay = document.getElementById('current-time');
 const totalDurationDisplay = document.getElementById('total-duration');
+const progressBarContainer = document.querySelector('.progress-bar-container');
+const progressBar = document.querySelector('.progress-bar');
 
 // Audio elements
 const audioPlayer = new Audio();
@@ -420,6 +450,16 @@ function updatePlayerOutline() {
 
     audioPlayer.addEventListener('timeupdate', () => {
         currentTimeDisplay.textContent = formatTime(audioPlayer.currentTime);
+        const progress = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progressBar.style.width = `${progress}%`;
+    });
+
+    progressBarContainer.addEventListener('click', (e) => {
+        const clickX = e.clientX - progressBarContainer.getBoundingClientRect().left;
+        const width = progressBarContainer.offsetWidth;
+        const duration = audioPlayer.duration;
+        const seekTime = (clickX / width) * duration;
+        audioPlayer.currentTime = seekTime;
     });
 
     audioPlayer.addEventListener('ended', () => {
@@ -536,6 +576,17 @@ function removeFromCollection(vinylId) {
         localStorage.setItem('userCollection', JSON.stringify(userCollection));
         updatePlaylist();
         displayVinyls(getActiveFilter()); // Re-render shop to update button states
+        
+        // Clear player if the removed vinyl is currently playing
+        if (currentVinyl.dataset.vinylId === vinylId.toString()) {
+            stopPlayback();
+            currentVinyl.querySelector('.vinyl-label').innerHTML = '';
+            currentVinyl.querySelector('.vinyl-label').style.backgroundImage = 'none';
+            currentVinyl.querySelector('.vinyl-label').style.backgroundColor = '#111';
+            document.querySelector('.track-list-container')?.remove();
+            currentTimeDisplay.textContent = '00:00';
+            totalDurationDisplay.textContent = '00:00';
+        }
     }
 }
 
