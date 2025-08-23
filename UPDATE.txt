@@ -82,3 +82,15 @@ v1.26 Remaining Added From The Smallest Update
 - Added Duration in the player
 - Added v1.25 to UPDATES.txt
 this is all...
+
+Commited on August 23, 2025,
+
+v1.3 The Return Update
+- Added Gemini Rights (Steve Lacy)
+- Added Awaken, My Love! (Gambino)
+- Added Lahai (Sampha)
+- Added Timebar to the player
+- Removed id: 4 For now!!!
+- Made the Player Larger
+- Fixed player remove bugs
+- Polished up the buttons
